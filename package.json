@@ -1,0 +1,20 @@
+{
+  "name": "ordonnances-cabinet-djossou",
+  "version": "1.0.0",
+  "description": "Gestion des ordonnances du Cabinet Dentaire Djossou",
+  "private": true,
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "dev": "node --watch --env-file-if-exists=.env server.js",
+    "backup": "node --env-file-if-exists=.env scripts/backup.js",
+    "reset-password": "node --env-file-if-exists=.env scripts/reset-password.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

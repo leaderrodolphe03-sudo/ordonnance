@@ -1,0 +1,72 @@
+// Catalogue initial, repris de l'ancienne page Ordonnance.html.
+// Utilisé uniquement au premier démarrage (table vide) ; ensuite tout se gère depuis l'application.
+
+const MATIN_SOIR_REPAS = '01 Comprimé matin et 01 Comprimé le soir au milieu du repas';
+const MATIN_SOIR = '01 Comprimé matin et 01 Comprimé le soir';
+const SIROP = '01 dose mesure le matin et soir pendant 5 jours';
+const BAIN_BOUCHE = 'Se rincer la bouche 02 à 03 fois par jour';
+const DENTIFRICE = 'Se brosser matin et soir';
+const GEL = 'Appliquez une petite quantité du gel directement sur la zone douloureuse dans la bouche avec un doigt propre, puis laissez agir sans rincer.';
+const BROSSETTE = 'Insérez doucement la brossette interdentaire entre les dents, puis faites un léger mouvement de va-et-vient pour nettoyer sans forcer.';
+
+export const DEFAULT_MEDICATIONS = [
+  { name: 'Aclav 500mg', dosage: '01 sachet matin et 01 sachet le soir' },
+  { name: 'Advil sirop', dosage: '01 dose poids matin et soir' },
+  { name: 'Amoxicilline 1g', dosage: MATIN_SOIR_REPAS },
+  { name: 'Amoxicilline 500mg', dosage: MATIN_SOIR_REPAS },
+  { name: 'Amoxicilline 250 suspension sirop', dosage: SIROP },
+  { name: 'Arthrodont (Pâte dentifrice)', dosage: DENTIFRICE },
+  { name: 'Augmentin 1g', dosage: '1 comprimé 2 fois par jour pendant 7 jours' },
+  { name: 'Azythromicine 500mg', dosage: '01 Comprimé par jour pendant 03 jours' },
+  { name: 'Bactoclav 1g', dosage: MATIN_SOIR_REPAS },
+  { name: 'Bispirazol', dosage: MATIN_SOIR },
+  { name: 'Brossette inter-dentaire (jaune)', dosage: BROSSETTE },
+  { name: 'Brossette inter-dentaire (rose)', dosage: BROSSETTE },
+  { name: 'Brossette inter-dentaire (rouge)', dosage: BROSSETTE },
+  { name: 'Brossette inter-dentaire (verte)', dosage: BROSSETTE },
+  { name: 'Brustan sirop', dosage: '10 ml le matin et 10 ml le soir' },
+  { name: 'CB 12 (Bain de bouche)', dosage: BAIN_BOUCHE },
+  { name: 'CoDoliprane 500mg', dosage: MATIN_SOIR },
+  { name: 'Cotipred 20mg', dosage: 'En prise unique le matin' },
+  { name: 'Doliprane 1g', dosage: MATIN_SOIR_REPAS },
+  { name: 'Doliprane 500mg', dosage: MATIN_SOIR_REPAS },
+  { name: 'Doliprane suspension 250mg Sirop', dosage: SIROP },
+  { name: 'Dolimex 1000mg', dosage: MATIN_SOIR },
+  { name: 'Dynapar 50mg', dosage: MATIN_SOIR },
+  { name: 'Efferalgan 1g', dosage: MATIN_SOIR_REPAS },
+  { name: 'Efferalgan 500mg', dosage: MATIN_SOIR_REPAS },
+  { name: 'Efferalgan codéiné 1g', dosage: MATIN_SOIR_REPAS },
+  { name: 'Efferalgan codéiné 500mg', dosage: MATIN_SOIR_REPAS },
+  { name: 'Elgydium dents sensibles (Pâte dentifrice)', dosage: DENTIFRICE },
+  { name: 'Elmex (Bain de bouche)', dosage: BAIN_BOUCHE },
+  { name: 'Elmex (Pâte dentifrice)', dosage: DENTIFRICE },
+  { name: 'Eludrilpro', dosage: "Diluer le bain de bouche en mélangeant une dose du produit avec deux doses d'eau. Gardez en bouche pendant 05 minutes." },
+  { name: 'Etorex 90mg', dosage: '01 Comprimé le matin et 01 Comprimé le soir' },
+  { name: 'Fil inter-dentaire (rose)', dosage: 'Insérez doucement le fil interdentaire entre les dents, puis faites un léger mouvement de va-et-vient pour nettoyer sans forcer.' },
+  { name: 'Flagyl 500mg', dosage: MATIN_SOIR },
+  { name: 'Fleming 250mg', dosage: '01 dose poids matin et 01 dose poids le soir' },
+  { name: 'Halita (Bain de bouche)', dosage: BAIN_BOUCHE },
+  { name: 'Halita (Pâte dentifrice)', dosage: DENTIFRICE },
+  { name: 'Meridol (Bain de bouche)', dosage: BAIN_BOUCHE },
+  { name: 'Meridol (Pâte dentifrice)', dosage: DENTIFRICE },
+  { name: 'Métronidazol 250mg', dosage: MATIN_SOIR },
+  { name: 'Métronidazol 500mg', dosage: MATIN_SOIR },
+  { name: 'Molgam 200mg', dosage: MATIN_SOIR },
+  { name: 'Pansoral (gel)', dosage: GEL },
+  { name: 'Paracétamol 1g', dosage: MATIN_SOIR_REPAS },
+  { name: 'Paracétamol 500mg', dosage: MATIN_SOIR_REPAS },
+  { name: 'Parodontax (Bain de bouche)', dosage: BAIN_BOUCHE },
+  { name: 'Profénid 100', dosage: '01 Comprimé matin et 01 Comprimé soir pendant 4 jours' },
+  { name: 'Sensodyne (Bain de bouche)', dosage: BAIN_BOUCHE },
+  { name: 'Spetyl (Bain de bouche)', dosage: BAIN_BOUCHE },
+  { name: 'Tess (gel)', dosage: GEL },
+  { name: 'Traclav 1125mg', dosage: MATIN_SOIR_REPAS },
+  { name: 'Tramadol 100mg', dosage: MATIN_SOIR },
+  { name: 'Ultra levure en sachet 100 mg', dosage: '01 sachet le matin et 01 sachet le soir pendant une semaine' },
+  { name: 'Vitis gingival (Pâte dentifrice)', dosage: DENTIFRICE },
+  { name: 'Zamox 1g', dosage: MATIN_SOIR },
+  { name: 'Zamox 250mg Sirop', dosage: SIROP },
+  { name: 'Zamox 500mg', dosage: '01 sachet matin et 01 sachet le soir au milieu du repas' },
+  { name: 'Zamox suspension', dosage: SIROP },
+  { name: 'Zérodol-P', dosage: '01 Comprimé (en cas de douleur)' },
+];

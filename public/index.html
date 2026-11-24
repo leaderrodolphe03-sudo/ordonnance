@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordonnances — Cabinet Dentaire</title>
+  <meta name="description" content="Ordonnances du Cabinet Dentaire Djossou">
+  <meta name="theme-color" content="#0f2a20">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <!-- Connexion -->
+  <div id="login-screen" class="login-screen" hidden>
+    <form class="login-card" id="login-form" novalidate>
+      <div class="login-brand">
+        <img src="img/logo.png" alt="Cabinet Dentaire Djossou">
+        <span>Gestion des ordonnances</span>
+      </div>
+      <h1>Connexion</h1>
+      <label class="field">Identifiant
+        <input name="username" autocomplete="username" required autofocus>
+      </label>
+      <label class="field">Mot de passe
+        <input name="password" type="password" autocomplete="current-password" required>
+      </label>
+      <p class="form-error" id="login-error" hidden></p>
+      <p class="form-success" id="login-info" hidden></p>
+      <button class="btn btn-primary btn-block" type="submit">Se connecter</button>
+      <p class="login-switch">Pas encore de compte ? <a href="#" data-auth-view="register">Créer mon compte</a></p>
+    </form>
+
+    <form class="login-card" id="register-form" novalidate hidden>
+      <div class="login-brand">
+        <img src="img/logo.png" alt="Cabinet Dentaire Djossou">
+        <span>Gestion des ordonnances</span>
+      </div>
+      <h1>Créer mon compte</h1>
+      <p class="muted login-note">Votre compte sera actif dès que l'administrateur du cabinet l'aura validé.</p>
+      <label class="field"><span class="field-label">Nom et prénom <span class="req">*</span></span>
+        <input name="full_name" autocomplete="name" maxlength="100" required placeholder="Ex : Dr Jean DJOSSOU">
+      </label>
+      <label class="field"><span class="field-label">Identifiant de connexion <span class="req">*</span></span>
+        <input name="username" autocomplete="username" maxlength="50" required placeholder="Ex : jdjossou">
+        <span class="hint">Lettres, chiffres, point, tiret ou _ (sans espace)</span>
+      </label>
+      <label class="field"><span class="field-label">Mot de passe <span class="req">*</span></span>
+        <input name="password" type="password" autocomplete="new-password" required>
+        <span class="hint">8 caractères minimum</span>
+      </label>
+      <label class="field"><span class="field-label">Confirmer le mot de passe <span class="req">*</span></span>
+        <input name="confirm" type="password" autocomplete="new-password" required>
+      </label>
+      <p class="form-error" id="register-error" hidden></p>
+      <button class="btn btn-primary btn-block" type="submit">Envoyer ma demande</button>
+      <p class="login-switch">Déjà un compte ? <a href="#" data-auth-view="login">Se connecter</a></p>
+    </form>
+  </div>
+
+  <!-- Application -->
+  <div id="app" class="app" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-mark"><img src="img/logo-icon.png" alt=""></span>
+        <div>
+          <strong data-setting="cabinet_name">Cabinet dentaire</strong>
+          <span>Ordonnances</span>
+        </div>
+      </div>
+      <nav class="nav" id="nav"></nav>
+      <button class="nav-install" id="install-btn" type="button" hidden>
+        <span data-icon="download"></span>
+        <span><strong>Installer l'application</strong><small>Icône sur le bureau, fenêtre dédiée</small></span>
+      </button>
+      <div class="sidebar-user">
+        <div class="avatar" id="user-avatar"></div>
+        <div class="sidebar-user-info">
+          <strong id="user-name"></strong>
+          <span id="user-role"></span>
+        </div>
+        <button class="icon-btn" id="logout-btn" title="Se déconnecter" aria-label="Se déconnecter" data-icon="logout"></button>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn" id="menu-btn" aria-label="Menu" data-icon="menu"></button>
+        <span class="topbar-title" id="topbar-title"></span>
+      </header>
+      <main class="content" id="content"></main>
+    </div>
+  </div>
+
+  <div id="print-area" class="print-area" aria-hidden="true"></div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+</body>
+</html>

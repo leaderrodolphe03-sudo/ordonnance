@@ -1,0 +1,23 @@
+# Service systemd (Linux). Copier dans /etc/systemd/system/ordonnances.service
+[Unit]
+Description=Ordonnances - Cabinet Dentaire
+After=network.target
+
+[Service]
+Type=simple
+User=ordonnances
+WorkingDirectory=/opt/ordonnances
+ExecStart=/usr/bin/node --env-file-if-exists=.env server.js
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+
+# Durcissement
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/opt/ordonnances/data /opt/ordonnances/backups
+
+[Install]
+WantedBy=multi-user.target
